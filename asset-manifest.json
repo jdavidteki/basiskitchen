@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/basiskitchen/static/js/app.ca5e2b10.chunk.js",
-    "app.js.map": "/basiskitchen/static/js/app.ca5e2b10.chunk.js.map",
+    "app.js": "/basiskitchen/static/js/app.4e9a2d60.chunk.js",
+    "app.js.map": "/basiskitchen/static/js/app.4e9a2d60.chunk.js.map",
     "runtime~app.js": "/basiskitchen/static/js/runtime~app.80634870.js",
     "runtime~app.js.map": "/basiskitchen/static/js/runtime~app.80634870.js.map",
-    "static/js/2.c57ee991.chunk.js": "/basiskitchen/static/js/2.c57ee991.chunk.js",
-    "static/js/2.c57ee991.chunk.js.map": "/basiskitchen/static/js/2.c57ee991.chunk.js.map",
+    "static/js/2.c3a24492.chunk.js": "/basiskitchen/static/js/2.c3a24492.chunk.js",
+    "static/js/2.c3a24492.chunk.js.map": "/basiskitchen/static/js/2.c3a24492.chunk.js.map",
     "favicon-16.png": "/basiskitchen/favicon-16.png",
     "favicon-32.png": "/basiskitchen/favicon-32.png",
     "favicon.ico": "/basiskitchen/favicon.ico",
@@ -13,7 +13,7 @@
     "manifest.json": "/basiskitchen/manifest.json",
     "serve.json": "/basiskitchen/serve.json",
     "service-worker.js.map": "/basiskitchen/service-worker.js.map",
-    "static/js/2.c57ee991.chunk.js.LICENSE.txt": "/basiskitchen/static/js/2.c57ee991.chunk.js.LICENSE.txt",
+    "static/js/2.c3a24492.chunk.js.LICENSE.txt": "/basiskitchen/static/js/2.c3a24492.chunk.js.LICENSE.txt",
     "static/media/Basisherogif.gif": "/basiskitchen/static/media/Basisherogif.9d23a437.gif",
     "static/media/cashappIcon.png": "/basiskitchen/static/media/cashappIcon.bb26a2e9.png",
     "static/media/fancybox_loading.gif": "/basiskitchen/static/media/fancybox_loading.78a563f0.gif",
@@ -25,7 +25,7 @@
   },
   "entrypoints": [
     "static/js/runtime~app.80634870.js",
-    "static/js/2.c57ee991.chunk.js",
-    "static/js/app.ca5e2b10.chunk.js"
+    "static/js/2.c3a24492.chunk.js",
+    "static/js/app.4e9a2d60.chunk.js"
   ]
 }
