@@ -5,8 +5,12 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import AudioPlayer from 'react-h5-audio-player';
 import cashappLogo from '../../assets/icons/cashappIcon.png';
+import PlayButton from "../PlayButton/PlayButton.js"
 import { GetSelectedStatusLevelLabel, GetSelectedLevelOptionAmount } from "../../Helpers/Helpers.js";
 import FancyVideo from "react-videojs-fancybox";
+import {HmsToSecondsOnly } from "../../helpers/Helpers.js";
+
+var stringSimilarity = require("string-similarity");
 
 import 'react-h5-audio-player/lib/styles.css';
 import "./Orders.css";
@@ -18,6 +22,7 @@ class ConnectedOrders extends Component {
     this.state = {
       emailAddress: "",
       firstName: "",
+      popularLines: [],
       id: "",
       igname: "",
       lastName: "",
@@ -25,6 +30,7 @@ class ConnectedOrders extends Component {
       reelPurpose: "",
       reelSampleLink: "",
       selectedLevelOption: "",
+      audioPlaying: false,
     };
   }
 
@@ -46,11 +52,75 @@ class ConnectedOrders extends Component {
             statusLabel: GetSelectedStatusLevelLabel(val.statusValue),
             dueDateSelected: val.dueDateSelected,
             orderAudioURL: val.orderAudioURL,
-            snippetVideoURL: val.snippetVideoURL
+            snippetVideoURL: val.snippetVideoURL,
+            audioIdToUse: val.audioIdToUse,
           });
         });
       }
     }
+  }
+
+  //TODO: figure out how to reduce o(n) for this
+  getBegSenTitle(senTitle, songs){
+    let foundLine = ""
+    let secTime = 0
+    let songId = 0
+
+    for (let i = 0; i < songs.length; i++) {
+      let lyricsArray = songs[i].lyrics.split("\n")
+
+      for (let j = 0; j < lyricsArray.length; j++){
+        if(stringSimilarity.compareTwoStrings(senTitle.toLowerCase().replaceAll(' ', ''), lyricsArray[j].toLowerCase().replaceAll(' ', '')) >= 0.5){
+          foundLine = lyricsArray[j]
+          songId = songs[i].id
+          break
+        }
+      }
+
+      if(foundLine != ""){
+        break
+      }
+    }
+
+    secTime = HmsToSecondsOnly(foundLine.substring(1, 9)) + parseInt(foundLine.substring(7, 9), 10)
+    return [Math.round(secTime/1000), songId]
+  }
+
+  playVocal = () => {
+    Firebase.getRimiSenTitles()
+    .then(val => {
+      let begSenTitleObj = this.getBegSenTitle(this.state.audioIdToUse, val)
+      let startOfSenTitle = begSenTitleObj[0]
+      let rimiSenTitleSongId = begSenTitleObj[1]
+
+      clearTimeout(this.state.prevTimeoutID)
+      if(this.audio != null && rimiSenTitleSongId != 0){
+        this.setState({audioPlaying: true})
+        this.audio.setAttribute("src", `https://storage.googleapis.com/africariyoki-4b634.appspot.com/vocals/${rimiSenTitleSongId}.mp3#t=${startOfSenTitle}`)
+
+        //wait for like 0.5sec before actually playing just incase it is paused
+        setTimeout(()=>{
+          if(this.audio != null) {
+            this.audio.play();
+            if (isFinite(startOfSenTitle)){
+              this.audio.currentTime = startOfSenTitle
+            }
+          }
+        }, 700);
+
+        const int = setTimeout(() => {
+          if(this.audio != undefined){
+            this.audio.pause();
+            this.setState({audioPlaying: false})
+            if (isFinite(startOfSenTitle)){
+              this.audio.currentTime = startOfSenTitle
+            }
+            clearTimeout(int)
+          }
+        }, 4000);
+        this.setState({prevTimeoutID: int})
+      }
+    })
   }
 
   render() {
@@ -104,13 +174,27 @@ class ConnectedOrders extends Component {
           </div>
 
           <div className="Orders-moreDetails">
+            {this.state.audioIdToUse &&
+              <div className="Orders-infoCard">
+                <div className="Orders-infoCard-title">Order Audio ID</div>
+                <div className="Orders-infoCard-infoDetails">
+                  <div className="Orders-playButtonSection" onClick={this.playVocal}>
+                    <div className="Orders-playButton">
+                      <PlayButton audioPlaying={this.state.audioPlaying} />
+                    </div>
+                    <div>{this.state.audioIdToUse.slice(10, -1).toLowerCase()}</div>
+                  </div>
+                </div>
+              </div>
+            }
+
             {this.state.snippetVideoURL && (
               <div className="Orders-infoCard">
                 <div className="Orders-infoCard-title">Video Snippet</div>
                 <div className="Orders-infoCard-infoDetails">
                   <FancyVideo
                     source={this.state.snippetVideoURL}
-                    poster="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d7606.appspot.com/o/images%2FScreen%20Shot%202022-10-18%20at%202.38.47%20PM.png?alt=media&token=1f64edde-6b4a-499e-8e93-83edb5d5f67b"
+                    poster="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/images%2FScreen%20Shot%202022-10-18%20at%202.38.47%20PM.png?alt=media&token=1f64edde-6b4a-499e-8e93-83edb5d5f67b"
                     id={"sintel3"}
                     fitToView={true}
                   />
@@ -155,12 +239,24 @@ class ConnectedOrders extends Component {
                 </div>
               </div>
             )}
-            <div className="Orders-infoCard Orders-cashApp" onClick={() => location.href = `https://cash.app/$basiskitchen/${GetSelectedLevelOptionAmount(this.state.selectedLevelOption)}`}>
+            <div className="Orders-infoCard Orders-cashApp" onClick={() => location.href = `https://cash.app/$Basiratharoon/${GetSelectedLevelOptionAmount(this.state.selectedLevelOption)}`}>
               <div className="Orders-infoCard-title">Make Payment</div>
               <div className="Orders-infoDetails">
                 <img className="Orders-cashApp-Logo" src={cashappLogo} alt="cashapp.logo"/>
               </div>
             </div>
+
+          <div className="Orders-audioPlayer">
+            <audio
+              style={{display:"none"}}
+              className={"Orders-audio"}
+              ref={ref => this.audio = ref}
+              id="sample"
+              crossOrigin="anonymous"
+              controls
+            />
+          </div>
+
           </div>
         </div>
       );

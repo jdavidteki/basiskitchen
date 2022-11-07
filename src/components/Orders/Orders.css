@@ -149,6 +149,14 @@
 .Orders #sintel3 {
   position: relative;
 }
+.Orders-playButtonSection {
+  display: flex;
+}
+.Orders-playButton {
+  margin-right: 16px;
+  cursor: pointer;
+  z-index: 2;
+}
 .Orders-details {
   display: flex;
   flex-direction: column;
@@ -204,11 +212,6 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 24px;
-}
-@media (min-width: 768px) {
-  .Orders-moreDetails {
-    max-height: 300px;
-  }
 }
 .Orders-infoCard {
   border: 1px solid #eee;

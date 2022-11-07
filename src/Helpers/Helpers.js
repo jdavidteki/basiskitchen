@@ -106,4 +106,4 @@ export function HmsToSecondsOnly(totalSecs) {
     }
 
     return s *1000 + ((parseInt(totalSecs.substr(6, 9), 10))/100);
-  }
+}

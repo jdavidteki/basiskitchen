@@ -16,6 +16,21 @@ class Firebase {
     })
   }
 
+  getRimiSenTitles = () =>{
+    return new Promise(resolve => {
+      firebase.database()
+      .ref('/rimiLyrics/')
+      .once('value')
+      .then(snapshot => {
+        if (snapshot.val()){
+          resolve(Object.values(snapshot.val()))
+        }else{
+          resolve({})
+        }
+      })
+    })
+  }
+
   postChats = (seller, buyer, message, productId, senderID) => {
     return new Promise(resolve => {
       firebase.database().
@@ -150,6 +165,7 @@ class Firebase {
           orderAudioURL: reel.orderAudioURL,
           statusValue: 0,
           snippetVideoURL: "",
+          audioIdToUse: reel.audioIdToUse,
         }
       )
       .then((response) => {

@@ -35,7 +35,7 @@ class ConnectedUploadSeacherBck extends Component {
     };
 
     handleUploadSuccess = filename => {
-        let videoURL = `https://firebasestorage.googleapis.com/v0/b/basiskitchen-d7606.appspot.com/o/videoSnippets%2F${this.state.orderId}.mp4?alt=media&token=844dba51-d9f5-4bf3-9e9b-7fb8b38429a1`
+        let videoURL = `https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/videoSnippets%2F${this.state.orderId}.mp4?alt=media&token=844dba51-d9f5-4bf3-9e9b-7fb8b38429a1`
         this.setState({ downloadURL: videoURL, avatarOnFile: true });
         Firebase.updateVideoSnippetURL(this.state.orderId, videoURL)
         .then(() => {
@@ -133,8 +133,8 @@ class ConnectedUploadSeacherBck extends Component {
                             </form>
                         }
                         <FancyVideo
-                            source={this.state.downloadURL ? this.state.downloadURL : "https://firebasestorage.googleapis.com/v0/b/basiskitchen-2a524.appspot.com/o/menuVideos%2F45381994989.mp4?alt=media&token=ec45452c-4ba6-4987-a3c2-249938b0b712"}
-                            poster="https://firebasestorage.googleapis.com/v0/b/basiskitchen-2a524.appspot.com/o/menuImages%2Fstew.png?alt=media&token=72db2c09-0ddb-49c1-a555-903b20c380cf"
+                            source={this.state.downloadURL ? this.state.downloadURL : "https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuVideos%2F45381994989.mp4?alt=media&token=ec45452c-4ba6-4987-a3c2-249938b0b712"}
+                            poster="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuImages%2Fstew.png?alt=media&token=72db2c09-0ddb-49c1-a555-903b20c380cf"
                             id={"sintel3"}
                             fitToView={true}
                         />

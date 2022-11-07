@@ -25,6 +25,18 @@
     position: relative;
   }
 
+  &-playButtonSection
+  {
+    display: flex;
+  }
+
+  &-playButton
+  {
+    margin-right: 16px;
+    cursor: pointer;
+    z-index: 2;
+  }
+
   &-details {
     display: flex;
     flex-direction: column;
@@ -86,12 +98,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 24px;
-
-
-    @include bpgte(sm)
-    {
-      max-height: 300px;
-    }
   }
 
   &-infoCard {
