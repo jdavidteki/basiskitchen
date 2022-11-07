@@ -1,0 +1,31 @@
+{
+  "files": {
+    "app.js": "/basiskitchen/static/js/app.de0b78bf.chunk.js",
+    "app.js.map": "/basiskitchen/static/js/app.de0b78bf.chunk.js.map",
+    "runtime~app.js": "/basiskitchen/static/js/runtime~app.80634870.js",
+    "runtime~app.js.map": "/basiskitchen/static/js/runtime~app.80634870.js.map",
+    "static/js/2.c57ee991.chunk.js": "/basiskitchen/static/js/2.c57ee991.chunk.js",
+    "static/js/2.c57ee991.chunk.js.map": "/basiskitchen/static/js/2.c57ee991.chunk.js.map",
+    "favicon-16.png": "/basiskitchen/favicon-16.png",
+    "favicon-32.png": "/basiskitchen/favicon-32.png",
+    "favicon.ico": "/basiskitchen/favicon.ico",
+    "index.html": "/basiskitchen/index.html",
+    "manifest.json": "/basiskitchen/manifest.json",
+    "serve.json": "/basiskitchen/serve.json",
+    "service-worker.js.map": "/basiskitchen/service-worker.js.map",
+    "static/js/2.c57ee991.chunk.js.LICENSE.txt": "/basiskitchen/static/js/2.c57ee991.chunk.js.LICENSE.txt",
+    "static/media/Basisherogif.gif": "/basiskitchen/static/media/Basisherogif.9d23a437.gif",
+    "static/media/cashappIcon.png": "/basiskitchen/static/media/cashappIcon.bb26a2e9.png",
+    "static/media/fancybox_loading.gif": "/basiskitchen/static/media/fancybox_loading.78a563f0.gif",
+    "static/media/fancybox_loading@2x.gif": "/basiskitchen/static/media/fancybox_loading@2x.d8f0a972.gif",
+    "static/media/fancybox_overlay.png": "/basiskitchen/static/media/fancybox_overlay.f0eb3448.png",
+    "static/media/fancybox_sprite.png": "/basiskitchen/static/media/fancybox_sprite.7b8e2ce6.png",
+    "static/media/fancybox_sprite@2x.png": "/basiskitchen/static/media/fancybox_sprite@2x.89fa20c7.png",
+    "static/media/logo.png": "/basiskitchen/static/media/logo.07da4129.png"
+  },
+  "entrypoints": [
+    "static/js/runtime~app.80634870.js",
+    "static/js/2.c57ee991.chunk.js",
+    "static/js/app.de0b78bf.chunk.js"
+  ]
+}
