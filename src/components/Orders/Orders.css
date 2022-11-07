@@ -1,0 +1,244 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300';
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
+.l-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: auto;
+}
+@media (min-width: 768px) {
+  .l-container {
+    width: 768px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media (min-width: 992px) {
+  .l-container {
+    width: 992px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media (min-width: 1200px) {
+  .l-container {
+    width: 1170px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .l-visible-only-xs {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .l-hidden-xs {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .l-hidden-sm {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .l-hidden-md {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .l-hidden-lg {
+    display: none;
+  }
+}
+
+/** @define Button */
+.Button--primary {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2px;
+  color: #fff;
+  background-color: #f5ab3c;
+  border-radius: 4px;
+  border: 1px solid #222;
+  padding: 13px 16px;
+  display: inline-block;
+  width: auto;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transition: 1s;
+  /* postcss-bem-linter: ignore */
+}
+.Button--primary:hover, .Button--primary:active {
+  transition: 1s;
+  background-color: #f1c87c;
+  opacity: 0.6;
+}
+@media (max-width: 767px) {
+  .Button--mobileHero {
+    height: 80px;
+    padding: 8px;
+    background-color: #eee;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+  }
+}
+
+/** @define Link */
+.Link--primary {
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: underline;
+  /* postcss-bem-linter: ignore */
+  /* postcss-bem-linter: ignore */
+  color: #f5ab3c;
+}
+.Link--primary:hover {
+  text-decoration: none;
+}
+.Link--primary:active {
+  text-decoration: underline;
+}
+
+/** @define Text */
+.Text {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333;
+}
+.Text--bold {
+  font-weight: 700;
+}
+.Text--large {
+  font-size: 20px;
+  line-height: 32px;
+}
+.Text--small {
+  font-size: 14px;
+  line-height: 20px;
+}
+.Text--extrasmall {
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.Orders {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.Orders-header {
+  border-bottom: 1px solid #eee;
+}
+.Orders-reelSampleLink {
+  cursor: pointer;
+}
+.Orders #sintel3 {
+  position: relative;
+}
+.Orders-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 32px 16px;
+  margin-top: 32px;
+}
+.Orders-details-level {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.Orders-details-level:not(:last-child) {
+  margin-bottom: 16px;
+}
+@media (max-width: 767px) {
+  .Orders-details-level {
+    flex-direction: column;
+  }
+}
+.Orders-orderThings {
+  display: flex;
+  flex-direction: column;
+  min-height: 50px;
+  align-items: space-between;
+  min-width: 30%;
+}
+.Orders-orderThings-top {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 8px;
+}
+.Orders-orderThings-mid {
+  font-weight: 600;
+}
+.Orders-orderThings-bottom {
+  color: #6848d8;
+}
+.Orders-cashApp {
+  cursor: pointer;
+}
+.Orders-cashApp-Logo {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.Orders-moreDetails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+@media (min-width: 768px) {
+  .Orders-moreDetails {
+    max-height: 300px;
+  }
+}
+.Orders-infoCard {
+  border: 1px solid #eee;
+  padding: 16px;
+  border-radius: 4px;
+  flex: 1 1 30%;
+  margin: 8px;
+}
+.Orders-infoCard-title {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 8px;
+}
+.Orders-audio {
+  background-color: transparent;
+  color: #6848d8;
+}
+.Orders-audio .rhap_total-time, .Orders-audio .rhap_current-time, .Orders-audio .rhap_play-pause-button {
+  color: #f5ab3c;
+}
+.Orders-audio .rhap_progress-filled {
+  background-color: #f1c87c;
+}
+.Orders-audio .rhap_time {
+  font-size: 10px;
+  font-weight: bold;
+}
+.Orders-audio .rhap_controls-section {
+  justify-content: center;
+}
+
+/*# sourceMappingURL=Orders.css.map */

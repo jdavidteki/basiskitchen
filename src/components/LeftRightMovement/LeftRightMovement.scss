@@ -1,0 +1,58 @@
+@import '../../assets/sass/Common.scss';
+
+.LeftRightMovement
+{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+
+  &-eachRimi
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+    margin: 4px;
+    flex-grow: 1;
+    padding: 8px;
+    border-radius: 4px;
+    text-overflow: ellipsis;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: animateCards 1s;
+    transition: all 1s ease;
+    background: $dark-purple;
+    color: $brand-light-green;
+    font-weight: bold;
+    text-transform: lowercase;
+  }
+
+  &-eachRimi.ishovered,
+  &-eachRimi:hover{
+    background-color: $brand-tertiary;
+    color:  $dark-purple;
+    cursor: pointer;
+  }
+
+  &-underline
+  {
+    height: 20px;
+    width: 1px;
+    margin: 0 8px;
+  }
+}
+
+@keyframes animateCards {
+  0% {
+    height: 50px;
+  }
+  25% {
+    height: 47px;
+  }
+  50% {
+    height: 43px;
+  }
+  100% {
+    height: 40px;
+  }
+}

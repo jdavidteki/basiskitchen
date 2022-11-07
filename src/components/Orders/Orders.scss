@@ -1,0 +1,131 @@
+@import "../../assets/sass/Common.scss";
+
+@mixin titleFont {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: $gray-4;
+  margin-bottom: 8px;
+}
+
+.Orders {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &-header {
+    border-bottom: $border-1;
+  }
+
+  &-reelSampleLink
+  {
+    cursor: pointer;
+  }
+
+  #sintel3{
+    position: relative;
+  }
+
+  &-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: $border-1;
+    border-radius: 8px;
+    padding: 32px 16px;
+    margin-top: 32px;
+
+    &-level {
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+
+      @include bplte(xs) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &-orderThings {
+    display: flex;
+    flex-direction: column;
+    min-height: 50px;
+    align-items: space-between;
+    min-width: 30%;
+
+    &-top {
+      @include titleFont;
+    }
+
+    &-mid {
+      font-weight: 600;
+    }
+
+    &-bottom {
+      color: $brand-1;
+    }
+  }
+
+  &-cashApp
+  {
+    cursor: pointer;
+
+    &-Logo{
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &-moreDetails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 24px;
+
+
+    @include bpgte(sm)
+    {
+      max-height: 300px;
+    }
+  }
+
+  &-infoCard {
+    border: $border-1;
+    padding: 16px;
+    border-radius: 4px;
+    flex: 1 1 30%;
+    margin: 8px;
+
+    &-title {
+      @include titleFont;
+    }
+  }
+
+  &-audio {
+    background-color: transparent;
+    color: $brand-1;
+  }
+
+  &-audio .rhap_total-time,
+  &-audio .rhap_current-time,
+  &-audio .rhap_play-pause-button {
+    color: $brand-primary;
+  }
+  &-audio .rhap_progress-filled {
+    background-color: $brand-secondary;
+  }
+
+  &-audio .rhap_time {
+    font-size: 10px;
+    font-weight: bold;
+  }
+
+  &-audio .rhap_controls-section {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,162 @@
+@import '../../assets/sass/Common.scss';
+
+.PurchaseReel{
+    display: flex;
+    flex-direction: column;
+
+    h2{
+        font-weight: $font-weight-light;
+        padding: 16px 8px;
+        margin-bottom: 32px;
+        border-radius: 4px;
+        background-color: $brand-secondary;
+        color: $gray-6;
+    }
+
+    h3{
+        font-weight: $font-weight-light;
+        font-size: medium;
+    }
+
+    #sintel3,
+    #sintel2,
+    #sintel1
+    {
+        position: relative;
+    }
+
+    &-voiceNote
+    {
+        padding-bottom: 32px;
+        border-bottom: 1px solid $gray-4;
+
+        h3{
+            background-color: $brand-primary;
+            padding: 8px;
+            margin-bottom: 0;
+            color: $gray-3;
+        }
+    }
+
+    &-eachSection{
+        margin: 16px 0;
+    }
+
+    &-levelOptions
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-levelOptionsGallery{
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 0;
+        overflow-x: auto;
+    }
+
+    &-galleryEntry{
+        width: calc(100%/3);
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 4px;
+        background-color: $brand-primary;
+
+        &:not(:last-child){
+            margin-right: 8px;
+        }
+    }
+
+    &-levelOptions.PurchaseReel-eachSection{
+        background-color: white;
+    }
+
+    &-videoDescription
+    {
+        margin: 8px;
+        color: $gray-3;
+
+        h3{
+            font-weight: bold;
+        }
+    }
+
+    &-stripePayment
+    {
+        margin: 16px auto;
+        width: 90%;
+        background-color: $brand-secondary;
+        padding: 24px;
+        border-radius: 4px;
+
+        @include bplte(xs){
+            width: 90%;
+
+            .__PrivateStripeElement
+            {
+                width: 270px;
+            }
+        }
+    }
+
+    &-placeOrder
+    {
+        pre{
+            color: $collapsing-banner-background;
+            font-size: xx-small;
+            background-color: $brand-light-green;
+            padding: 8px;
+            border-radius: 4px;
+        }
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .styles_poster__1JohY
+    {
+        height: 170px;
+        object-fit: cover;
+    }
+
+    .multiSelectContainer input{
+        width: 300px;
+        cursor: pointer;
+    }
+
+    ._1ceqH ._1lB9c
+    {
+        display: none;
+    }
+
+    ._dt3-T._dt3-T,
+    ._3bC73
+    {
+        background-color: $brand-1;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    ._1ceqH ._1YOWG ._eV_dK {
+        text-align: center;
+    }
+
+    ._1ceqH ._1Yplu
+    {
+        display: flex;
+        justify-content: center;
+    }
+
+    ._1ceqH ._2fG9h
+    {
+        padding-top: 0;
+    }
+
+    ._1Pz2d._37kfa
+    {
+        display: none;
+    }
+}

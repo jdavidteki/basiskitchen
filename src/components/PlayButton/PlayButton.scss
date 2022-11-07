@@ -1,0 +1,61 @@
+$primary: #33cc33;
+
+.PlayButton{
+   &-wrapper {
+        position: relative;
+        width: 25px;
+        height: 25px;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+
+    &-circle {
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50%;
+        background-color: $primary;
+        margin: auto;
+        transform: scale(1, 1);
+
+        &.pulse {
+          animation-timing-function: ease;
+          background-color: lighten($primary, 25%);
+        }
+    }
+
+    svg {
+        fill: darken($primary, 12%);
+        stroke: darken($primary, 12%);
+        stroke-linejoin: round;
+        stroke-width: 5;
+        transition: all 0.3s;
+
+        &:hover {
+          cursor: pointer;
+          fill: darken($primary, 17%);
+          stroke: darken($primary, 17%);
+          transform: scale(1.2, 1.2);
+        }
+      }
+
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}

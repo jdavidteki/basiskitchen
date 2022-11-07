@@ -1,0 +1,72 @@
+@import "../../assets/sass/Common.scss";
+
+.Messages-area {
+  padding: 20px;
+  height: 400px;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.Messages-area-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Messages-area .Messages-bubble {
+  background-color: #bbdefb;
+  padding: 20px;
+  border-radius: 4px;
+  max-width: 300px;
+  word-wrap: break-word;
+}
+
+.Messages-bubble .Messages-time {
+  font-size: 12px;
+  color: #757575;
+  text-align: right;
+}
+
+.Messages-area .Messages-bubble.current-user {
+  margin-left: auto;
+  background-color: #a5d6a7;
+}
+
+.form-control {
+  width: 60%;
+}
+
+.mx-3 {
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+  flex-grow: 1;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.Messages-area-sendmsg {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Messages-area-deal {
+  display: flex;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .form-control {
+    width: 100%;
+  }
+
+  .Messages-area .Messages-bubble {
+    max-width: 250px;
+  }
+}

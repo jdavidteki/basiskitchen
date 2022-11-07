@@ -1,0 +1,173 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300';
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
+.l-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: auto;
+}
+@media (min-width: 768px) {
+  .l-container {
+    width: 768px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media (min-width: 992px) {
+  .l-container {
+    width: 992px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media (min-width: 1200px) {
+  .l-container {
+    width: 1170px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .l-visible-only-xs {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .l-hidden-xs {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .l-hidden-sm {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .l-hidden-md {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .l-hidden-lg {
+    display: none;
+  }
+}
+
+/** @define Button */
+.Button--primary {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 2px;
+  color: #fff;
+  background-color: #f5ab3c;
+  border-radius: 4px;
+  border: 1px solid #222;
+  padding: 13px 16px;
+  display: inline-block;
+  width: auto;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transition: 1s;
+  /* postcss-bem-linter: ignore */
+}
+.Button--primary:hover, .Button--primary:active {
+  transition: 1s;
+  background-color: #f1c87c;
+  opacity: 0.6;
+}
+@media (max-width: 767px) {
+  .Button--mobileHero {
+    height: 80px;
+    padding: 8px;
+    background-color: #eee;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+  }
+}
+
+/** @define Link */
+.Link--primary {
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: underline;
+  /* postcss-bem-linter: ignore */
+  /* postcss-bem-linter: ignore */
+  color: #f5ab3c;
+}
+.Link--primary:hover {
+  text-decoration: none;
+}
+.Link--primary:active {
+  text-decoration: underline;
+}
+
+/** @define Text */
+.Text {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333;
+}
+.Text--bold {
+  font-weight: 700;
+}
+.Text--large {
+  font-size: 20px;
+  line-height: 32px;
+}
+.Text--small {
+  font-size: 14px;
+  line-height: 20px;
+}
+.Text--extrasmall {
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.UploadVideoSnippet {
+  background-color: #c5e0f8;
+}
+.UploadVideoSnippet #sintel3 {
+  position: relative;
+}
+.UploadVideoSnippet-errorMsg {
+  font-size: xx-small;
+  color: #b00000;
+}
+
+.UploadVideoSnippet-categories {
+  width: 100%;
+}
+
+.UploadVideoSnippet-categories .MuiFormControl-root.MuiTextField-root {
+  width: 100%;
+  height: 38px;
+}
+
+.UploadVideoSnippet-categories .css-yk16xz-control {
+  border-right: none !important;
+  border-left: none !important;
+  border-top: none !important;
+  border-radius: 0px !important;
+}
+
+.UploadVideoSnippet-categories .css-g1d714-ValueContainer {
+  padding: 0 !important;
+}
+
+.UploadVideoSnippet-categories .css-1wa3eu0-placeholder {
+  margin: 0 !important;
+}
+
+/*# sourceMappingURL=UploadVideoSnippet.css.map */

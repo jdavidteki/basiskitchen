@@ -1,0 +1,30 @@
+@import '../../assets/sass/Common.scss';
+
+.UploadVideoSnippet{
+    background-color: #c5e0f8;
+
+    #sintel3
+    {
+        position: relative;
+    }
+
+    &-errorMsg{
+        font-size: xx-small;
+        color: $collapsing-banner-background;
+    }
+}
+
+.UploadVideoSnippet-categories {
+    width: 100%; }
+    .UploadVideoSnippet-categories .MuiFormControl-root.MuiTextField-root {
+      width: 100%;
+      height: 38px; }
+    .UploadVideoSnippet-categories .css-yk16xz-control {
+      border-right: none !important;
+      border-left: none !important;
+      border-top: none !important;
+      border-radius: 0px !important; }
+    .UploadVideoSnippet-categories .css-g1d714-ValueContainer {
+      padding: 0 !important; }
+    .UploadVideoSnippet-categories .css-1wa3eu0-placeholder {
+      margin: 0 !important; }
