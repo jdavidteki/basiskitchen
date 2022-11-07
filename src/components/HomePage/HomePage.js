@@ -116,7 +116,7 @@ class ConnectedHomePage extends Component{
         </div>
         <div className="HomePage-container">
           <div className="HomePage-greeting" id="homePageGreeting">
-            <h1>Welcome! I am Bola, Basis' Assistant</h1>
+            <h1>Welcome! I am Bola, Basi's Assistant</h1>
             <h3>How may I help you?</h3>
           </div>
           <div className="HomePage-options">
