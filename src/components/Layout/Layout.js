@@ -32,10 +32,6 @@ class Layout extends Component{
 
     layoutContent.classList.add("Layout-content")
     layoutContent.classList.add(this.state.pageName);
-
-    setTimeout( () => {
-        document.querySelector(".Layout").clientHeight = document.querySelector(".Layout").clientHeight + layoutContent.clientHeight
-    }, 3000)
   }
 
   changePage = (pageToChange) => {

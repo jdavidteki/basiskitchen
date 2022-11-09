@@ -8,9 +8,13 @@
         font-weight: $font-weight-light;
         padding: 16px 8px;
         margin-bottom: 32px;
+        margin-top: 16px;
         border-radius: 4px;
-        background-color: $brand-secondary;
-        color: $gray-6;
+        background-color: $brand-tertiary;
+
+        @include bplte(xs){
+            font-size: large;
+        }
     }
 
     h3{
@@ -34,7 +38,8 @@
             background-color: $brand-primary;
             padding: 8px;
             margin-bottom: 0;
-            color: $gray-3;
+            color: white;
+            font-weight: bold;
         }
     }
 
@@ -75,7 +80,7 @@
     &-videoDescription
     {
         margin: 8px;
-        color: $gray-3;
+        color: white;
 
         h3{
             font-weight: bold;
@@ -158,5 +163,16 @@
     ._1Pz2d._37kfa
     {
         display: none;
+    }
+
+    ._1ceqH ._1dpop
+    {
+        background-color: $brand-primary;
+    }
+
+    ._1ceqH ._1Yplu ._2gd2_
+    {
+        color: $brand-primary;
+        font-weight: bold;
     }
 }

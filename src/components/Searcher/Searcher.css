@@ -65,7 +65,7 @@
   line-height: 24px;
   letter-spacing: 2px;
   color: #fff;
-  background-color: #f5ab3c;
+  background-color: #800020;
   border-radius: 4px;
   border: 1px solid #222;
   padding: 13px 16px;
@@ -80,7 +80,7 @@
 }
 .Button--primary:hover, .Button--primary:active {
   transition: 1s;
-  background-color: #f1c87c;
+  background-color: #DCB69A;
   opacity: 0.6;
 }
 @media (max-width: 767px) {
@@ -104,7 +104,7 @@
   text-decoration: underline;
   /* postcss-bem-linter: ignore */
   /* postcss-bem-linter: ignore */
-  color: #f5ab3c;
+  color: #800020;
 }
 .Link--primary:hover {
   text-decoration: none;
@@ -140,7 +140,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #f1c87c;
+  background: #DCB69A;
   height: 40px;
   min-width: 40px;
   border-radius: 40px;
@@ -153,7 +153,7 @@
   padding: 0 6px;
 }
 .Searcher-btn {
-  color: #f1c87c;
+  color: #DCB69A;
   float: right;
   width: 40px;
   height: 40px;

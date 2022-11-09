@@ -65,7 +65,7 @@
   line-height: 24px;
   letter-spacing: 2px;
   color: #fff;
-  background-color: #f5ab3c;
+  background-color: #800020;
   border-radius: 4px;
   border: 1px solid #222;
   padding: 13px 16px;
@@ -80,7 +80,7 @@
 }
 .Button--primary:hover, .Button--primary:active {
   transition: 1s;
-  background-color: #f1c87c;
+  background-color: #DCB69A;
   opacity: 0.6;
 }
 @media (max-width: 767px) {
@@ -104,7 +104,7 @@
   text-decoration: underline;
   /* postcss-bem-linter: ignore */
   /* postcss-bem-linter: ignore */
-  color: #f5ab3c;
+  color: #800020;
 }
 .Link--primary:hover {
   text-decoration: none;
@@ -143,9 +143,14 @@
   font-weight: 300;
   padding: 16px 8px;
   margin-bottom: 32px;
+  margin-top: 16px;
   border-radius: 4px;
-  background-color: #f1c87c;
-  color: #6b7c93;
+  background-color: #f4e3d6;
+}
+@media (max-width: 767px) {
+  .PurchaseReel h2 {
+    font-size: large;
+  }
 }
 .PurchaseReel h3 {
   font-weight: 300;
@@ -161,10 +166,11 @@
   border-bottom: 1px solid #999;
 }
 .PurchaseReel-voiceNote h3 {
-  background-color: #f5ab3c;
+  background-color: #800020;
   padding: 8px;
   margin-bottom: 0;
-  color: #555;
+  color: white;
+  font-weight: bold;
 }
 .PurchaseReel-eachSection {
   margin: 16px 0;
@@ -185,7 +191,7 @@
   display: flex;
   flex-direction: column;
   border-radius: 4px;
-  background-color: #f5ab3c;
+  background-color: #800020;
 }
 .PurchaseReel-galleryEntry:not(:last-child) {
   margin-right: 8px;
@@ -195,7 +201,7 @@
 }
 .PurchaseReel-videoDescription {
   margin: 8px;
-  color: #555;
+  color: white;
 }
 .PurchaseReel-videoDescription h3 {
   font-weight: bold;
@@ -203,7 +209,7 @@
 .PurchaseReel-stripePayment {
   margin: 16px auto;
   width: 90%;
-  background-color: #f1c87c;
+  background-color: #DCB69A;
   padding: 24px;
   border-radius: 4px;
 }
@@ -224,7 +230,7 @@
 .PurchaseReel-placeOrder pre {
   color: #b00000;
   font-size: xx-small;
-  background-color: #defacf;
+  background-color: #f4e3d6;
   padding: 8px;
   border-radius: 4px;
 }
@@ -241,7 +247,7 @@
 }
 .PurchaseReel ._dt3-T._dt3-T,
 .PurchaseReel ._3bC73 {
-  background-color: #6848d8;
+  background-color: #DCB69A;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
@@ -257,6 +263,13 @@
 }
 .PurchaseReel ._1Pz2d._37kfa {
   display: none;
+}
+.PurchaseReel ._1ceqH ._1dpop {
+  background-color: #800020;
+}
+.PurchaseReel ._1ceqH ._1Yplu ._2gd2_ {
+  color: #800020;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=PurchaseReel.css.map */

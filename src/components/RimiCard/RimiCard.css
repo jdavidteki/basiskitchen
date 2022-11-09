@@ -65,7 +65,7 @@
   line-height: 24px;
   letter-spacing: 2px;
   color: #fff;
-  background-color: #f5ab3c;
+  background-color: #800020;
   border-radius: 4px;
   border: 1px solid #222;
   padding: 13px 16px;
@@ -80,7 +80,7 @@
 }
 .Button--primary:hover, .Button--primary:active {
   transition: 1s;
-  background-color: #f1c87c;
+  background-color: #DCB69A;
   opacity: 0.6;
 }
 @media (max-width: 767px) {
@@ -104,7 +104,7 @@
   text-decoration: underline;
   /* postcss-bem-linter: ignore */
   /* postcss-bem-linter: ignore */
-  color: #f5ab3c;
+  color: #800020;
 }
 .Link--primary:hover {
   text-decoration: none;
@@ -160,8 +160,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ecee70;
-  box-shadow: -3px -3px 7px #ecee70, 3px 3px 5px;
+  background: #f4e3d6;
+  box-shadow: -3px -3px 7px #f4e3d6, 3px 3px 5px;
   margin-bottom: 16px;
 }
 .RimiCard-playButton {
@@ -180,7 +180,7 @@
 .RimiCard-senTitle {
   font-size: 11px;
   line-height: 13px;
-  background-color: #f5ab3c;
+  background-color: #800020;
   height: 100%;
   display: flex;
   align-items: center;
@@ -197,7 +197,7 @@
   left: -14px;
   z-index: 0;
   top: 3px;
-  background-color: #defacf;
+  background-color: #f4e3d6;
   height: 25px;
   width: 25px;
   border-radius: 50%;
@@ -249,7 +249,7 @@
   text-align: center;
 }
 .RimiCard-logo {
-  outline: 1px solid #defacf;
+  outline: 1px solid #f4e3d6;
   display: inline-block;
   padding: 15px 40px;
   font-family: "Roboto", sans-serif;
@@ -259,7 +259,7 @@
   letter-spacing: 8px;
 }
 .RimiCard-back {
-  background: #defacf;
+  background: #f4e3d6;
   padding: 30px;
   display: flex;
   flex-direction: column;

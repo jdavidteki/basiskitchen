@@ -44,24 +44,28 @@ export function GetSvgIcon(iconName, fillColor) {
 }
 
 export function GetSelectedLevelOptionAmount(value){
-    if (value == "Friendsgiving Package"){
-        return "250"
+    if (value == "Regular Chicken Shawarma"){
+        return "12"
     }
 
-    if (value == "Family Dinner"){
-        return "430"
+    if (value == "Regular Beef Shawarma"){
+        return "14"
     }
 
-    if (value == "Get-together Package"){
+    if (value == "Regular Combo (Chicken and Beef)"){
         return "880"
     }
 
     if (value == "Owanbe Package"){
-        return "1,200"
+        return "15"
     }
 
-    if (value == "Amala Platter"){
-        return "350"
+    if (value == "Regular Mega (Chicken, Beef, and Shrimp)"){
+        return "16"
+    }
+
+    if (value == "Double Sausage Chicken Shawarma"){
+        return "14"
     }
 }
 

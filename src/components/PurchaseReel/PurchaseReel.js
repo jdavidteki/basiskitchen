@@ -44,24 +44,22 @@ class ConnectedPurchaseReel extends Component {
         },
       },
 
-      purposeOptions: [
-        { name: "Half tray peppered Ponmo $150", id: 1 },
-        { name: "Zobo $5 per bottle ", id: 2 },
-        { name: "Half tray asun $150", id: 3 },
-        { name: "Half tray Ayamase $150", id: 4 },
-        { name: "White rice 1 $30", id: 5 },
-        { name: "White rice 2 $60", id: 6 },
-        { name: "Ofada Elewe $5 per wrap", id: 7 },
-        { name: "Half tray plaintain $50", id: 8 },
-        { name: "Grilled fish platter $40", id: 9 },
-      ],
-
       levelOptions: [
-        { name: "Friendsgiving Package", id: 1 },
-        { name: "Family Dinner", id: 2 },
-        { name: "Get-together Package", id: 3 },
-        { name: "Owanbe Package", id: 4 },
-        { name: "Amala Platter", id: 5 },
+        { name: "Regular Chicken Shawarma", id: 1 },
+        { name: "Regular Beef Shawarma", id: 2 },
+        { name: "Regular Combo (Chicken and Beef)", id: 3 },
+        { name: "Regular Mega (Chicken, Beef, and Shrimp)", id: 4 },
+        { name: "Double Sausage Chicken Shawarma", id: 5 },
+        { name: "Double Sausage Beef Shawarma", id: 6},
+        { name: "Double Sausage Mega (chicken, beef, and shrimp)", id: 7},
+        { name: "Extra Chicken Shawarma", id: 8},
+        { name: "Extra Beef Shawarma", id: 9},
+        { name: "Extra Combo (chicken and beef)", id: 10},
+        { name: "Extra Mega (chicken, beef, and shrimp)", id: 11},
+        { name: "No Sausage Chicken Shawarma", id: 12},
+        { name: "No Sausage Beef Shawarma", id: 13},
+        { name: "No Sausage Combo (chicken and beef)", id: 14},
+        { name: "No sausage Mega (chicken, beef, and shrimp)", id: 15},
       ],
     };
   }
@@ -147,10 +145,6 @@ class ConnectedPurchaseReel extends Component {
 		}else{
 			if(this.state.levelOptions == ""){
 				errors += " You didn't select an item preference \n"
-			}
-
-			if(this.state.reelPurpose == ""){
-				errors += " You did not enter an add-on \n"
 			}
 
 		}
@@ -250,10 +244,27 @@ class ConnectedPurchaseReel extends Component {
           />
 					<TextField
             value={this.state.igname}
+            placeholder="Phone Number  **"
+            onChange={(e) => {
+              this.setState({ igname: e.target.value });
+            }}
+          />
+					<TextField
+            value={this.state.igname}
             placeholder="Instagram Username **"
             onChange={(e) => {
               this.setState({ igname: e.target.value });
             }}
+          />
+        </div>
+
+        <div className="PurchaseReel-dueDateSelection PurchaseReel-eachSection">
+          <h3>* Select pick up time</h3>
+          <DatePicker
+            selected={this.state.dueDateSelected}
+            onSelect={(e) => this.setState({dueDateSelected: e})} //when day is clicked
+            onChange={(e) => this.setState({dueDateSelected: e})} //only when value has changed
+            minDate={new Date()}
           />
         </div>
 
@@ -275,7 +286,7 @@ class ConnectedPurchaseReel extends Component {
         </div>
 
         <div className="PurchaseReel-levelOptions PurchaseReel-eachSection">
-          <h3>* Select your pricing preference below</h3>
+          <h3>TODO: Select from our menu. </h3>
           <div className="PurchaseReel-levelOptionsGallery">
 						<div className="PurchaseReel-galleryEntry">
               <FancyVideo
@@ -286,7 +297,6 @@ class ConnectedPurchaseReel extends Component {
               />
               <div className="PurchaseReel-videoDescription">
                 <h3>Regular Chicken Shawarma: $12</h3>
-                  TODO: description
               </div>
             </div>
             <div className="PurchaseReel-galleryEntry">
@@ -298,7 +308,6 @@ class ConnectedPurchaseReel extends Component {
               />
               <div className="PurchaseReel-videoDescription">
                 <h3>Regular Beef Shawarma: $14</h3>
-                  TODO: description
               </div>
             </div>
             <div className="PurchaseReel-galleryEntry">
@@ -311,7 +320,6 @@ class ConnectedPurchaseReel extends Component {
               />
               <div className="PurchaseReel-videoDescription">
                 <h3>Regular Combo (Chicken and Beef): $15</h3>
-                  TODO: description
               </div>
             </div>
             <div className="PurchaseReel-galleryEntry">
@@ -324,39 +332,65 @@ class ConnectedPurchaseReel extends Component {
               />
               <div className="PurchaseReel-videoDescription">
                 <h3>Regular Mega (Chicken, Beef, and Shrimp): $16</h3>
-                  TODO: description
+              </div>
+            </div>
+          </div>
+
+          <div className="PurchaseReel-levelOptionsGallery">
+						<div className="PurchaseReel-galleryEntry">
+              <FancyVideo
+                source="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuVideos%2F72695374727.mp4?alt=media&token=c997364e-eb40-4192-b8c0-30a2d2aa153f"
+                poster="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuImages%2FmenuImage1.png?alt=media&token=c4ae131b-aed9-41e5-834b-083348e9e4f1"
+                id={"sintel3"}
+                fitToView={true}
+              />
+              <div className="PurchaseReel-videoDescription">
+                <h3>Double Sausage Chicken Shawarma: $14</h3>
+              </div>
+            </div>
+            <div className="PurchaseReel-galleryEntry">
+              <FancyVideo
+                source="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuVideos%2F45381994989.mp4?alt=media&token=ec45452c-4ba6-4987-a3c2-249938b0b712"
+                poster="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuImages%2FmenuImage2.png?alt=media&token=877ed329-9473-4422-bba5-1f3ff3559578"
+                id={"sintel2"}
+                fitToView={true}
+              />
+              <div className="PurchaseReel-videoDescription">
+                <h3>Double Sausage Beef Shawarma: $16</h3>
+              </div>
+            </div>
+            <div className="PurchaseReel-galleryEntry">
+              <FancyVideo
+                source="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/466D8CFA-5B4B-41A2-967E-39C79E982A1B.mov?alt=media&token=7941c2d7-0312-4c98-b5fa-141ff9f90fdf"
+                poster="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuImages%2FmenuImage3.png?alt=media&token=21483e12-4d25-4c15-93e9-960a0d3828fa"
+                id={"sintel1"}
+                fitToView={true}
+                autoplay
+              />
+              <div className="PurchaseReel-videoDescription">
+                <h3>Double Sausage Mega (chicken, beef, and shrimp): $18</h3>
+              </div>
+            </div>
+            <div className="PurchaseReel-galleryEntry">
+              <FancyVideo
+                source="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/466D8CFA-5B4B-41A2-967E-39C79E982A1B.mov?alt=media&token=7941c2d7-0312-4c98-b5fa-141ff9f90fdf"
+                poster="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuImages%2FmenuImage4.png?alt=media&token=21483e12-4d25-4c15-93e9-960a0d3828fa"
+                id={"sintel1"}
+                fitToView={true}
+                autoplay
+              />
+              <div className="PurchaseReel-videoDescription">
+                <h3>Regular Mega (Chicken, Beef, and Shrimp): $16</h3>
               </div>
             </div>
           </div>
           <Multiselect
-            options={this.state.levelOptions} // Options to display in the dropdown
-            selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
-            onSelect={(e) => this.setState({selectedLevelOption: e[0].name})} // Function will trigger on select event
-            displayValue="name" // Property name to display in the dropdown options
-            placeholder="TODO: click here to select package"
-            closeOnSelect={true}
-          />
-        </div>
-
-        <div className="PurchaseReel-purposeOptions PurchaseReel-eachSection">
-          <h3>* Select an Add-On</h3>
-          <Multiselect
-            options={this.state.purposeOptions} // Options to display in the dropdown
-            selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
-            onSelect={(e) => this.setState({reelPurpose: e[0].name})} // Function will trigger on select event
-            displayValue="name" // Property name to display in the dropdown options
-            placeholder="TODO: click to select an add-on"
-            closeOnSelect={true}
-          />
-        </div>
-
-        <div className="PurchaseReel-dueDateSelection PurchaseReel-eachSection">
-          <h3>* Select due date</h3>
-          <DatePicker
-            selected={this.state.dueDateSelected}
-            onSelect={(e) => this.setState({dueDateSelected: e})} //when day is clicked
-            onChange={(e) => this.setState({dueDateSelected: e})} //only when value has changed
-            minDate={new Date()}
+            options={this.state.levelOptions}
+            selectedValues={this.state.selectedValue}
+            onSelect={(e) => this.setState({selectedLevelOption: e[0].name})}
+            displayValue="name"
+            placeholder="choose your shawarma!"
+            className="classname"
           />
         </div>
 
@@ -364,6 +398,8 @@ class ConnectedPurchaseReel extends Component {
           <h3>* Is there something else you need that we haven't covered?</h3>
           <TextField
             value={this.state.reelSampleLink}
+            multiline = {true}
+            minRows={2}
             placeholder="enter brief note here"
             onChange={(e) => {
               this.setState({ reelSampleLink: e.target.value });
@@ -378,7 +414,7 @@ class ConnectedPurchaseReel extends Component {
 
 					<Button
 						variant="contained"
-						style={{backgroundColor: '#6848d8', color: 'white', marginTop: 32, marginBottom: 16}}
+						style={{backgroundColor: '#800020', color: 'white', marginTop: 32, marginBottom: 16, fontWeidght: 500}}
 						onClick={() => this.placeOrder()}
 					>
 						Place Order

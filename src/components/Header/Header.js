@@ -11,7 +11,7 @@ class Header extends Component{
 
     this.state = {
       catSelected: "basiskitchen",
-      findMeIconHover: "#f5ab3c",
+      findMeIconHover: "#800020",
     }
   }
 
@@ -23,11 +23,11 @@ class Header extends Component{
     })
 
     if(catSelected == "basiskitchen"){
-      this.setState({ findMeIconHover: "#f5ab3c"})
+      this.setState({ findMeIconHover: "#800020"})
     }else if(catSelected == "aboutme"){
-      this.setState({ createIconHover: "#f5ab3c"})
+      this.setState({ createIconHover: "#800020"})
     }else if(catSelected == "mecards"){
-      this.setState({ meCardsIconHover: "#f5ab3c"})
+      this.setState({ meCardsIconHover: "#800020"})
     }
 
     this.props.changePage(catSelected)
@@ -36,9 +36,9 @@ class Header extends Component{
   componentDidMount(){
     let path = window.location.pathname;
     this.setState({
-      findMeIconHover: path.includes("basiskitchen/") || path.includes("rimicard") ? "#f5ab3c" : 'black',
-      createIconHover: path.includes("aboutme/") ? "#f5ab3c" : 'black',
-      meCardsIconHover: path.includes("mecards/") ? "#f5ab3c" : 'black',
+      findMeIconHover: path.includes("basiskitchen/") || path.includes("rimicard") ? "#800020" : 'black',
+      createIconHover: path.includes("aboutme/") ? "#800020" : 'black',
+      meCardsIconHover: path.includes("mecards/") ? "#800020" : 'black',
     })
   }
 

@@ -6,10 +6,10 @@ $font-weight-semibold: 600;
 $font-weight-normal: 400;
 $font-weight-light: 300;
 
-$brand-primary: #f5ab3c !default;
-$brand-secondary: #f1c87c !default;
-$brand-tertiary: #ecee70 !default;
-$brand-1: #6848d8 !default;
+$brand-primary: #800020 !default;
+$brand-secondary: #DCB69A !default;
+$brand-tertiary: #f4e3d6 !default;
+$brand-1: $brand-secondary !default;
 $brand-2: #332a4e !default;
 $brand-3: #f7de8b !default;
 
@@ -79,6 +79,6 @@ $collapsing-banner-fontcolor: #fff !default;
 
 $dark-overlay: $gray-5;
 $dark-purple: #31036f;
-$brand-light-green: #defacf;
+$brand-light-green: $brand-tertiary;
 
 $white: #fff;
