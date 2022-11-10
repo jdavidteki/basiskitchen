@@ -166,6 +166,7 @@ class Firebase {
           statusValue: 0,
           snippetVideoURL: "",
           audioIdToUse: reel.audioIdToUse,
+          cart: reel.cart,
         }
       )
       .then((response) => {

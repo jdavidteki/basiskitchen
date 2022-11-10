@@ -1,0 +1,96 @@
+@import '../../assets/sass/Common.scss';
+
+.Menu{
+    display: flex;
+    flex-direction: column;
+
+    h3{
+        font-weight: $font-weight-light;
+        font-size: medium;
+    }
+
+    &-video
+    {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+    }
+
+    &-eachSection{
+        margin: 16px 0;
+    }
+
+    &-levelOptions
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-levelOptionsGallery{
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 0;
+        overflow-x: auto;
+    }
+
+    &-galleryEntry{
+        width: calc(100%/3);
+        min-width: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 4px;
+        background-color: $brand-primary;
+
+        &:not(:last-child){
+            margin-right: 8px;
+        }
+    }
+
+    &-levelOptions.Menu-eachSection{
+        background-color: white;
+    }
+
+    &-videoDescription
+    {
+        padding: 8px;
+        color: white;
+
+
+        h3{
+            font-weight: bold;
+        }
+    }
+
+    &-selectItem
+    {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        font-size: 30px;
+        padding: 8px;
+        cursor: pointer;
+
+        &--updateCart
+        {
+            border: 1px solid $brand-secondary;
+            padding: 2px;
+            border-radius: 4px;
+            min-width: 24px;
+            display: flex;
+            justify-content: center;
+        }
+
+        &--itemCount
+        {
+            background-color: white;
+            color: black;
+            border-radius: 4px;
+            padding: 0px 16px;
+            width: 24px;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

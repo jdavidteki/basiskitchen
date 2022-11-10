@@ -4,12 +4,11 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import Multiselect from "multiselect-react-dropdown";
-import FancyVideo from "react-videojs-fancybox";
 import DatePicker from "react-datepicker";
 import { Recorder } from "react-voice-recorder";
 import validator from 'validator'
 import emailjs from '@emailjs/browser'
+import Menu from "../../components/Menu/Menu.js"
 
 import "./PurchaseReel.css";
 import "react-datepicker/dist/react-datepicker.css";
@@ -143,7 +142,7 @@ class ConnectedPurchaseReel extends Component {
 		if (this.state.audioDetails.chunks != null){
 			audioRecorded = true
 		}else{
-			if(this.state.levelOptions == ""){
+			if(this.state.cart.length == 0){
 				errors += " You didn't select an item preference \n"
 			}
 
@@ -166,6 +165,7 @@ class ConnectedPurchaseReel extends Component {
 				selectedLevelOption: this.state.selectedLevelOption,
         orderAudioURL: "",
         audioIdToUse: this.state.audioIdToUse,
+        cart: this.state.cart,
 			}
 
       if(audioRecorded){
@@ -212,6 +212,10 @@ class ConnectedPurchaseReel extends Component {
     }, (error) => {
         this.setState({errorMsg: error.message})
     });
+  }
+
+  handleGetCart = (cart) => {
+    this.setState({cart: cart});
   }
 
   render() {
@@ -285,114 +289,7 @@ class ConnectedPurchaseReel extends Component {
           />
         </div>
 
-        <div className="PurchaseReel-levelOptions PurchaseReel-eachSection">
-          <h3>TODO: Select from our menu. </h3>
-          <div className="PurchaseReel-levelOptionsGallery">
-						<div className="PurchaseReel-galleryEntry">
-              <FancyVideo
-                source="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuVideos%2F72695374727.mp4?alt=media&token=c997364e-eb40-4192-b8c0-30a2d2aa153f"
-                poster="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuImages%2FmenuImage1.png?alt=media&token=c4ae131b-aed9-41e5-834b-083348e9e4f1"
-                id={"sintel3"}
-                fitToView={true}
-              />
-              <div className="PurchaseReel-videoDescription">
-                <h3>Regular Chicken Shawarma: $12</h3>
-              </div>
-            </div>
-            <div className="PurchaseReel-galleryEntry">
-              <FancyVideo
-                source="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuVideos%2F45381994989.mp4?alt=media&token=ec45452c-4ba6-4987-a3c2-249938b0b712"
-                poster="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuImages%2FmenuImage2.png?alt=media&token=877ed329-9473-4422-bba5-1f3ff3559578"
-                id={"sintel2"}
-                fitToView={true}
-              />
-              <div className="PurchaseReel-videoDescription">
-                <h3>Regular Beef Shawarma: $14</h3>
-              </div>
-            </div>
-            <div className="PurchaseReel-galleryEntry">
-              <FancyVideo
-                source="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/466D8CFA-5B4B-41A2-967E-39C79E982A1B.mov?alt=media&token=7941c2d7-0312-4c98-b5fa-141ff9f90fdf"
-                poster="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuImages%2FmenuImage3.png?alt=media&token=21483e12-4d25-4c15-93e9-960a0d3828fa"
-                id={"sintel1"}
-                fitToView={true}
-                autoplay
-              />
-              <div className="PurchaseReel-videoDescription">
-                <h3>Regular Combo (Chicken and Beef): $15</h3>
-              </div>
-            </div>
-            <div className="PurchaseReel-galleryEntry">
-              <FancyVideo
-                source="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/466D8CFA-5B4B-41A2-967E-39C79E982A1B.mov?alt=media&token=7941c2d7-0312-4c98-b5fa-141ff9f90fdf"
-                poster="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuImages%2FmenuImage4.png?alt=media&token=21483e12-4d25-4c15-93e9-960a0d3828fa"
-                id={"sintel1"}
-                fitToView={true}
-                autoplay
-              />
-              <div className="PurchaseReel-videoDescription">
-                <h3>Regular Mega (Chicken, Beef, and Shrimp): $16</h3>
-              </div>
-            </div>
-          </div>
-
-          <div className="PurchaseReel-levelOptionsGallery">
-						<div className="PurchaseReel-galleryEntry">
-              <FancyVideo
-                source="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuVideos%2F72695374727.mp4?alt=media&token=c997364e-eb40-4192-b8c0-30a2d2aa153f"
-                poster="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuImages%2FmenuImage1.png?alt=media&token=c4ae131b-aed9-41e5-834b-083348e9e4f1"
-                id={"sintel3"}
-                fitToView={true}
-              />
-              <div className="PurchaseReel-videoDescription">
-                <h3>Double Sausage Chicken Shawarma: $14</h3>
-              </div>
-            </div>
-            <div className="PurchaseReel-galleryEntry">
-              <FancyVideo
-                source="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuVideos%2F45381994989.mp4?alt=media&token=ec45452c-4ba6-4987-a3c2-249938b0b712"
-                poster="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuImages%2FmenuImage2.png?alt=media&token=877ed329-9473-4422-bba5-1f3ff3559578"
-                id={"sintel2"}
-                fitToView={true}
-              />
-              <div className="PurchaseReel-videoDescription">
-                <h3>Double Sausage Beef Shawarma: $16</h3>
-              </div>
-            </div>
-            <div className="PurchaseReel-galleryEntry">
-              <FancyVideo
-                source="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/466D8CFA-5B4B-41A2-967E-39C79E982A1B.mov?alt=media&token=7941c2d7-0312-4c98-b5fa-141ff9f90fdf"
-                poster="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuImages%2FmenuImage3.png?alt=media&token=21483e12-4d25-4c15-93e9-960a0d3828fa"
-                id={"sintel1"}
-                fitToView={true}
-                autoplay
-              />
-              <div className="PurchaseReel-videoDescription">
-                <h3>Double Sausage Mega (chicken, beef, and shrimp): $18</h3>
-              </div>
-            </div>
-            <div className="PurchaseReel-galleryEntry">
-              <FancyVideo
-                source="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/466D8CFA-5B4B-41A2-967E-39C79E982A1B.mov?alt=media&token=7941c2d7-0312-4c98-b5fa-141ff9f90fdf"
-                poster="https://firebasestorage.googleapis.com/v0/b/basiskitchen-d93ed.appspot.com/o/menuImages%2FmenuImage4.png?alt=media&token=21483e12-4d25-4c15-93e9-960a0d3828fa"
-                id={"sintel1"}
-                fitToView={true}
-                autoplay
-              />
-              <div className="PurchaseReel-videoDescription">
-                <h3>Regular Mega (Chicken, Beef, and Shrimp): $16</h3>
-              </div>
-            </div>
-          </div>
-          <Multiselect
-            options={this.state.levelOptions}
-            selectedValues={this.state.selectedValue}
-            onSelect={(e) => this.setState({selectedLevelOption: e[0].name})}
-            displayValue="name"
-            placeholder="choose your shawarma!"
-            className="classname"
-          />
-        </div>
+        <Menu returnCartItems={this.handleGetCart} />
 
         <div className="PurchaseReel-sampleVideo PurchaseReel-eachSection">
           <h3>* Is there something else you need that we haven't covered?</h3>
