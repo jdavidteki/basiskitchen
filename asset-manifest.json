@@ -1,7 +1,7 @@
 {
   "files": {
-    "app.js": "/basiskitchen/static/js/app.0f34e506.chunk.js",
-    "app.js.map": "/basiskitchen/static/js/app.0f34e506.chunk.js.map",
+    "app.js": "/basiskitchen/static/js/app.81a6867b.chunk.js",
+    "app.js.map": "/basiskitchen/static/js/app.81a6867b.chunk.js.map",
     "runtime~app.js": "/basiskitchen/static/js/runtime~app.80634870.js",
     "runtime~app.js.map": "/basiskitchen/static/js/runtime~app.80634870.js.map",
     "static/js/2.209c7033.chunk.js": "/basiskitchen/static/js/2.209c7033.chunk.js",
@@ -26,6 +26,6 @@
   "entrypoints": [
     "static/js/runtime~app.80634870.js",
     "static/js/2.209c7033.chunk.js",
-    "static/js/app.0f34e506.chunk.js"
+    "static/js/app.81a6867b.chunk.js"
   ]
 }
