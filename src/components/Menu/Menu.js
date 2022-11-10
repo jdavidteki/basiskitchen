@@ -91,7 +91,7 @@ class ConnectedMenu extends Component {
 
   render() {
     return (
-      <div className="Menu l-container">
+      <div className="Menu">
         <div className="Menu-levelOptions Menu-eachSection">
           {this.state.menuSectionName && <h3>{this.state.menuSectionName}</h3>}
 
